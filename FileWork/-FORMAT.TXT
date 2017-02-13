@@ -1,0 +1,153 @@
+Demarcation Lines
+
+
+: For-Header And Footer
+//********************************************************************************//
+
+
+: For:-Subline
+//________________________________________________________________________________//
+
+
+
+: For-Main Line
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+: For-Sub Sub Line
+//.................................................................................................................................................................//
+
+
+Font Times New Roman Regular
+Size  12
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+SAMPLE
+
+HEADER
+/****************************************..****************************************/
+/****************************************..****************************************/
+/****************************************..****************************************/
+/****************************************..****************************************/
+/****************************************..****************************************/
+>>Leave A Line
+
+#include <iostream.h>					:note space b/w
+#include <conio.h>
+>>Leave A Line
+
+Declaration Of Global variables
+$For Ex:
+float 	a,b;
+int	c,d;
+char	e,f;
+>>Leave A Line
+Mainline;
+Declaration + Defination of a Class
+$For Ex:
+class a						:Name shhould be in small letters Untill in short form or req
+{
+private:
+   float   r;
+   float   i;
+public:
+   void	enter    ();					:3 spaces ; note uniformity
+   void	display ();
+
+   void	add_e  (complex c1,complex c2);
+   complex	add_i   (complex c);
+
+   void	mul_e  (complex c1,complex c2);
+   complex	mul_i   (complex temp);				:Always Declare Inside Define Outside
+						 make inline if required
+   void	sub_e  (complex c1,complex c2);
+   complex	sub_i   (complex temp);
+}
+>>Without Leaving Line
+Defination Of Members					:in same order
+1)Static
+>>leave line
+2)member functions(each seperated by subline without leave line)	:refer to main() for format
+for ex:
+int     ticbooth::nofp;
+float  ticbooth::amt;
+>>Leave line
+
+void complex::enter()
+{
+ cout<<"Enter Real Part\t\t";       cin>>r;			:1 space ; note uniformity
+ cout<<"Enter Imaginary Part\t"; cin>>i;			:refer to main() further
+}
+Mainline;
+functions in same way as member functions without leaving lines declare and define at same time to avoid confuison
+each seperated by mainline without leave line.			:2 spaces: refer to main() further
+Mainline
+>>Leave Line
+for ex:
+footer Start:
+//********************************************************************************//
+void main()						:Always
+{
+  clrscr();						:2 spaces
+  cout<<"BASIC OPERATIONS ON COMPLEX NUMBERS";	:Always Give Heading In Capitals
+
+  int ch;
+  complex c1,c2,r;
+
+  cout<<"\nEnter First Number\n";		c1.enter();		:In Messages Follow First letter Capital
+  cout<<"\nEnter Second Number\n";	c2.enter();
+
+  do
+  {
+   cout<<"\nMain Menu"				:3 spaces 2+1 for brace
+         <<"\n1)\tADD"
+         <<"\n2)\tSUBTRACT"
+         <<"\n3)\tMULTIPLY"
+         <<"\n4)\tEXIT"
+         <<"\n\nEnter Choice...";    cin>>ch;
+
+     switch(ch)					:inside brace 5 spaces 2+1+1(brace)+2 gap
+     {
+      case 1:						:6 spaces
+	r.add_e(c1,c2);	//explicit call		:Comments should be Uniform
+	r.display();
+	cout<<"\n";
+	r=c1.add_i(c2);	//implicit call
+	r.display();
+	break;
+
+      case 2:
+	r.sub_e(c1,c2);	//explicit call
+	r.display();
+	cout<<"\n";
+	r=c1.sub_i(c2);	//implicit call
+	r.display();
+	break;
+
+      case 3:
+	r.mul_e(c1,c2);	//explicit call
+	r.display();
+	cout<<"\n";
+	r=c1.mul_i(c2);	//implicit call
+	r.display();
+	break;
+
+      case 4:
+	exit(0);
+	break;
+
+      default:
+	cout<<"Invalid Choice";
+      }
+
+  cout<<"\n\nPress 'Y' to Continue...";
+
+  }while(toupper(getche())=='Y');
+}
+FOOTER  END
+/****************************************..****************************************/
+
+Take Sample Prinnt outs as ospx before taking the final print out to check whether it fits the line of not.
+Name of the program file should be in capitals
+
+
+constructors and destructors are defined inline;
